@@ -4,6 +4,7 @@ import { fetchTopStories } from './utils/apiCalls'
 
 const App = () => {
   const [homeStories, setHomeStories] = useState([])
+  const [error, setError] = useState('')
 
   const setArticleID = (data) => {
     return data.map(story => {
@@ -15,6 +16,7 @@ const App = () => {
   const getTopHomeStories = () => {
     fetchTopStories('home')
     .then(data => setHomeStories(setArticleID(data.results)))
+    .catch(err => setError(err))
   }
 
   useEffect(() => {
