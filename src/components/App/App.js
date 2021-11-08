@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import { fetchTopStories } from './utils/apiCalls'
+import { fetchTopStories } from '../../utils/apiCalls'
+// import Header from '../Header/Header'
 
 const App = () => {
   const [homeStories, setHomeStories] = useState([])
@@ -32,7 +33,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <p>TEST</p>
+    <p>Test</p>
     </div>
   );
 }
