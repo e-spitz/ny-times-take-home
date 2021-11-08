@@ -4,6 +4,7 @@ import { fetchTopStories } from './utils/apiCalls'
 
 const App = () => {
   const [homeStories, setHomeStories] = useState([])
+  const [section, setSection] = useState('home')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -15,7 +16,7 @@ const App = () => {
   }
 
   const getTopHomeStories = () => {
-    fetchTopStories('home')
+    fetchTopStories(section)
     .then(data => setHomeStories(setArticleID(data.results)))
     .catch(err => setError(err))
   }
