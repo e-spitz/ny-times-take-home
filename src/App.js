@@ -4,6 +4,7 @@ import { fetchTopStories } from './utils/apiCalls'
 
 const App = () => {
   const [homeStories, setHomeStories] = useState([])
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const setArticleID = (data) => {
@@ -20,8 +21,13 @@ const App = () => {
   }
 
   useEffect(() => {
-     getTopHomeStories();
+    setLoading(true)
+    getTopHomeStories();
    }, []);
+
+  useEffect(() => {
+    setLoading(false)
+  }, [homeStories])
 
   return (
     <div className="App">
