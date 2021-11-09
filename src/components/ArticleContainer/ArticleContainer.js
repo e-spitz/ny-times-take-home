@@ -20,17 +20,18 @@ const ArticleContainer = () => {
   }
 
   useEffect(() => {
+    setStories([])
     setLoading(true)
 
     if (!section) {
       section = 'home'
     }
-    
+
     const getStories = async () => {
       try {
         const currentStories = await fetchTopStories(section);
-        setStories(setArticleID(currentStories.results));
         setLoading(false);
+        setStories(setArticleID(currentStories.results));
       } catch (err) {
         console.log(error);
         setError(err.message);
