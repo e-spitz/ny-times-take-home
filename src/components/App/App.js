@@ -1,9 +1,12 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import { fetchTopStories } from './utils/apiCalls'
+import { Route, Routes } from 'react-router-dom'
+import { fetchTopStories } from '../../utils/apiCalls'
+import Header from '../Header/Header'
+import ArticleContainer from '../ArticleContainer/ArticleContainer'
 
 const App = () => {
-  const [homeStories, setHomeStories] = useState([])
+  const [stories, setStories] = useState([])
   const [section, setSection] = useState('home')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -15,24 +18,26 @@ const App = () => {
     })
   }
 
-  const getTopHomeStories = () => {
+  const getStories = () => {
+    setError('')
     fetchTopStories(section)
-    .then(data => setHomeStories(setArticleID(data.results)))
-    .catch(err => setError(err))
+    .then(data => setStories(setArticleID(data.results)))
+    .catch(err => setError(err.message))
   }
 
   useEffect(() => {
     setLoading(true)
-    getTopHomeStories();
-   }, []);
+    getStories();
+  }, []);
 
   useEffect(() => {
     setLoading(false)
-  }, [homeStories])
+  }, [stories])
 
   return (
     <div className="App">
-      <p>TEST</p>
+      <Header />
+      <ArticleContainer section={section} stories={stories}/>
     </div>
   );
 }
