@@ -1,1 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+
+
+.header-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5em;
+  letter-spacing: 2.5px;
+  margin: 0;
+  padding-top: 4%;
+  height: 2em;
+}
+
+.today-date {
+  margin-top: -5%;
+  padding-bottom: 3%;
+  font-style: italic;
+  font-size: 1.5em;
+}

@@ -3,9 +3,10 @@ import './StoryCard.css'
 const StoryCard = ({ story }) => {
   console.log(story)
   return (
-    <div>
-      <p>{story.title}</p>
-    </div>
+    <article className='story-card'>
+      <p className='story-title'>{story.title}</p>
+      <p>{story.section}</p>
+    </article>
   )
 }
 
