@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { fetchTopStories } from '../../utils/apiCalls'
 import Header from '../Header/Header'
 import ArticleContainer from '../ArticleContainer/ArticleContainer'
@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
     setLoading(true)
     getStories();
-   }, []);
+  }, []);
 
   useEffect(() => {
     setLoading(false)
@@ -36,8 +36,8 @@ const App = () => {
 
   return (
     <div className="App">
-    <Header />
-    <ArticleContainer section={section} stories={stories}/>
+      <Header />
+      <ArticleContainer section={section} stories={stories}/>
     </div>
   );
 }
