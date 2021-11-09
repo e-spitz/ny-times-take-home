@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import ArticleContainer from '../ArticleContainer/ArticleContainer';
+import StoryCardDetails from '../StoryCardDetails/StoryCardDetails';
 
 const App = () => {
 
@@ -18,6 +19,10 @@ const App = () => {
         <Route
           exact path='/:section'
           element={<ArticleContainer />}
+        />
+        <Route
+          exact path='/:section/:id'
+          element={<StoryCardDetails />}
         />
       </Routes>
     </div>

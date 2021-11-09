@@ -1,7 +1,7 @@
 import './ArticleContainer.css'
 import { useEffect, useState } from 'react';
 import { fetchTopStories } from '../../utils/apiCalls';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import StoryCard from '../StoryCard/StoryCard'
 
@@ -23,27 +23,22 @@ const ArticleContainer = () => {
     setStories([])
     setLoading(true)
 
-    if (!section) {
-      section = 'home'
-    }
-
     const getStories = async () => {
       try {
-        const currentStories = await fetchTopStories(section);
+        const currentStories = await fetchTopStories(section || 'home');
         setLoading(false);
         setStories(setArticleID(currentStories.results));
       } catch (err) {
-        console.log(error);
+        console.log(err);
         setError(err.message);
       }
     };
     getStories();
-  }, [section]);
-
+  }, [section, error]);
 
   const storyCards = stories.map(story => {
     return (
-      <StoryCard story={story}/>
+      <StoryCard key={story.id} story={story}/>
     );
   })
 

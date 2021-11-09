@@ -1,5 +1,5 @@
 import './Nav.css';
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
 
@@ -10,9 +10,9 @@ const Nav = () => {
 
   const sectionNav = sections.map(section => {
     return (
-      <NavLink to={`/${section}`}>
+      <Link to={`/${section}`} key={section.id}>
         <button className='nav-btn'>{section}</button>
-      </NavLink>
+      </Link>
     );
   })
 
