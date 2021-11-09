@@ -1,0 +1,22 @@
+.nav-bar {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin-bottom: 2%;
+}
+
+.nav-btn {
+  font-size: 1em;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  margin: 1%;
+  padding: 4%;
+  width: 98%;
+}
+
+.nav-btn:hover {
+  cursor: pointer;
+  background: white;
+  color: teal;
+}

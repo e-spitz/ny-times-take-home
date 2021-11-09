@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   const date = Date().split(' ').slice(0,4).join(' ')
-  console.log(date)
+
   return (
     <section>
       <div className='title-date'>
