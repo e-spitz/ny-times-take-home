@@ -7,7 +7,7 @@ export const fetchTopStories = async (section) => {
   return data;
 }
 
-export const checkForErrors = (res) => {
+const checkForErrors = (res) => {
   if (res.status === 404) {
     throw new Error('Oops, something went wrong. Please check back later.')
   } else if (res.status === 500) {
