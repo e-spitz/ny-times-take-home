@@ -2,8 +2,7 @@ import './ArticleContainer.css'
 import { useEffect, useState } from 'react';
 import { fetchTopStories } from '../../utils/apiCalls';
 import { useParams } from 'react-router-dom';
-
-import StoryCard from '../StoryCard/StoryCard'
+import StoryCard from '../StoryCard/StoryCard';
 
 const ArticleContainer = () => {
   let { section } = useParams()
@@ -25,16 +24,16 @@ const ArticleContainer = () => {
 
     const getStories = async () => {
       try {
-        const currentStories = await fetchTopStories(section || 'home');
-        setLoading(false);
-        setStories(setArticleID(currentStories.results));
+        const currentStories = await fetchTopStories(section || 'home')
+        setLoading(false)
+        setStories(setArticleID(currentStories.results))
       } catch (err) {
-        console.log(err);
-        setError(err.message);
+        console.log(err)
+        setError(err.message)
       }
-    };
-    getStories();
-  }, [section, error]);
+    }
+    getStories()
+  }, [section, error])
 
   const storyCards = stories.map(story => {
     return (

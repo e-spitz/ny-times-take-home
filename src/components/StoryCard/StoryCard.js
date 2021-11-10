@@ -10,7 +10,7 @@ const StoryCard = ({ story }) => {
           <p>{story.section}</p>
         </article>
       </Link>
-  )
+  );
 }
 
 export default StoryCard

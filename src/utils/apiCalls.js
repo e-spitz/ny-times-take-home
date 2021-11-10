@@ -9,12 +9,12 @@ export const fetchTopStories = async (section) => {
 
 const checkForErrors = (res) => {
   if (res.status === 404) {
-    throw new Error('Oops, something went wrong. Please check back later.')
+    throw new Error('Something went wrong. Please check back later.')
   } else if (res.status === 500) {
     throw new Error('Server Error. Please check back later.')
   } else if (res.ok) {
     return res.json()
   } else {
-    throw new Error('Oops, something went wrong. Please check back later.')
+    throw new Error('Something went wrong. Please check back later.')
   }
 }

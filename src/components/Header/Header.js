@@ -1,5 +1,5 @@
-import './Header.css'
-import { Link } from 'react-router-dom'
+import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const date = Date().split(' ').slice(0,4).join(' ')
@@ -13,7 +13,7 @@ const Header = () => {
           </div>
         </Link>
       </section>
-  )
+  );
 }
 
 export default Header;

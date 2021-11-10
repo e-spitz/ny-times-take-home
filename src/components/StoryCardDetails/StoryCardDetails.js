@@ -30,12 +30,12 @@ const StoryCardDetails = () => {
         setError(err.message)
       }
     }
-    getSingleArticle();
+    getSingleArticle()
   }, [section, id, error])
 
   return (
     <div>
-    <p>{article.title}</p>
+      <p>{article.title}</p>
     </div>
   );
 }
