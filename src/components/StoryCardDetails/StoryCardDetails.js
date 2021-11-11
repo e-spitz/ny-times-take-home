@@ -34,9 +34,16 @@ const StoryCardDetails = () => {
   }, [section, id, error])
 
   return (
-    <div>
-      <p>{article.title}</p>
-    </div>
+    <section>
+      {error && <p>Error loading article. Please check back later</p>}
+      {!error && loading ? <p>Loading article...</p> : (
+        <article>
+          <h1 className='article-title'>{article.title}</h1>
+          <p className='byline'>{article.byline}</p>
+          <img className='article-image' src={article.multimedia[0].url}/>
+        </article>
+      )}
+    </section>
   );
 }
 
