@@ -36,6 +36,7 @@ const ArticleContainer = () => {
   }, [section, error])
 
   const storyCards = stories.map(story => {
+    console.log(section)
     if (story.section && story.title) {
       return (
         <StoryCard key={story.id} story={story}/>
@@ -47,7 +48,9 @@ const ArticleContainer = () => {
   return (
     <section className='article-container'>
       {loading && !error && <p>Loading...</p>}
-      {!loading && error && <p>Error uploading articles</p>}
+      {!loading && error && <p>Error uploading articles.</p>}
+      {!loading && !error && <h1 className='section-header'>{section}</h1>}
+      <div className='line' style={{display: !section && 'none'}}></div>
       {storyCards}
     </section>
   );

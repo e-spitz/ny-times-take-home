@@ -38,12 +38,15 @@ const StoryCardDetails = () => {
       {error && <p>Error loading article. Please check back later.</p>}
       {!error && loading ? <p>Loading article...</p> : (
         <article className='article-details'>
-        <div className='article-info'>
-          <h1 className='article-title'>{article.title}</h1>
-          <p className='abstract' style={{'font-style': 'italic'}}>{article.abstract}</p>
-          <p className='byline' style={{display: !article.byline && 'none'}}>{article.byline}</p>
-          <p className='article-url' style={{display: article.url === "null" && 'none'}}>View full article <a href={article.url}>here</a></p>
-        </div>
+          <div className='article-info'>
+            <h1 className='article-title'>{article.title}</h1>
+            <p className='abstract' style={{fontStyle: 'italic'}}>{article.abstract}</p>
+            <p className='byline' style={{display: !article.byline && 'none'}}>{article.byline}</p>
+            <div className='image-container'>
+              <img className='article-image' src={article.multimedia[0].url} />
+            </div>
+            <p className='article-url' style={{display: article.url === "null" && 'none'}}>View full article <a href={article.url}>here</a></p>
+          </div>
         </article>
       )}
     </section>
