@@ -35,12 +35,15 @@ const StoryCardDetails = () => {
 
   return (
     <section>
-      {error && <p>Error loading article. Please check back later</p>}
+      {error && <p>Error loading article. Please check back later.</p>}
       {!error && loading ? <p>Loading article...</p> : (
-        <article>
+        <article className='article-details'>
+        <div className='article-info'>
           <h1 className='article-title'>{article.title}</h1>
-          <p className='byline'>{article.byline}</p>
-          <img className='article-image' src={article.multimedia[0].url}/>
+          <p className='abstract' style={{'font-style': 'italic'}}>{article.abstract}</p>
+          <p className='byline' style={{display: !article.byline && 'none'}}>{article.byline}</p>
+          <p className='article-url' style={{display: article.url === "null" && 'none'}}>View full article <a href={article.url}>here</a></p>
+        </div>
         </article>
       )}
     </section>

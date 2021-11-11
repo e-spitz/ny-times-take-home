@@ -36,9 +36,12 @@ const ArticleContainer = () => {
   }, [section, error])
 
   const storyCards = stories.map(story => {
-    return (
-      <StoryCard key={story.id} story={story}/>
-    );
+    if (story.section && story.title) {
+      return (
+        <StoryCard key={story.id} story={story}/>
+      );
+    }
+    return null
   })
 
   return (
