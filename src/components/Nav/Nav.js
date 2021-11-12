@@ -7,7 +7,7 @@ const Nav = () => {
   const sectionNav = sections.map(section => {
       return (
         <Link to={`/${section}`} key={section.id}>
-          <button className='nav-btn'>{section}</button>
+          <button className='nav-btn' key={section.id}>{section}</button>
         </Link>
       );
   })

@@ -1,11 +1,42 @@
-.story-card {
-  border: 1px solid black;
-  background-color: lightgrey;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+.story-card-stories {
+  background-color: whitesmoke;
   color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 25vh
 }
 
-.story-title {
+.story-card-stories:hover {
+  background-color: #efefef;
+}
+
+.story-title-stories {
+  margin: 0;
   font-weight: bold;
+  font-size: 1.7em;
+  width: 100%;
+  font-family: 'Merriweather';
+}
+
+.title-abstract-stories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5%;
+}
+
+.story-abstract-stories {
+  font-size: 1em;
+  margin: 0;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .story-card-link {
