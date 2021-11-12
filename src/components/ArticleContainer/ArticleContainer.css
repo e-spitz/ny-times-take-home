@@ -3,3 +3,18 @@
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 1em;
 }
+
+.section-header {
+  margin: 0;
+  text-align: left;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3em;
+  letter-spacing: 2px;
+  margin-left: 1%;
+  margin-bottom: -1%;
+}
+
+.line {
+  border-bottom: 1px solid black;
+  margin: 0;
+}

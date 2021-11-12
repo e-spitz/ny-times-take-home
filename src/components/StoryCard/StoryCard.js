@@ -1,13 +1,19 @@
-import './StoryCard.css'
+import './StoryCard.css';
+import { Link } from 'react-router-dom'
 
 const StoryCard = ({ story }) => {
 
+  const formatID = story.short_url.split('/')
+  const id = formatID[formatID.length - 1]
+
   return (
-    <article className='story-card'>
-      <p className='story-title'>{story.title}</p>
-      <p>{story.section}</p>
-    </article>
-  )
+    <Link to={`/${story.section}/${id}`} className='story-card-link' key={id}>
+      <article className='story-card' id={id}>
+        <p className='story-title'>{story.title}</p>
+        <p>{story.section}</p>
+      </article>
+    </Link>
+  );
 }
 
-export default StoryCard
+export default StoryCard;
