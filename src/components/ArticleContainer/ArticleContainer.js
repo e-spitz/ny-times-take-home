@@ -4,6 +4,7 @@ import { fetchTopStories } from '../../utils/apiCalls';
 import { useParams } from 'react-router-dom';
 import StoryCard from '../StoryCard/StoryCard';
 import { Link } from 'react-router-dom';
+import Error from '../Error/Error';
 
 const ArticleContainer = () => {
   let { section } = useParams()
@@ -41,7 +42,7 @@ const ArticleContainer = () => {
   return (
     <section className='article-container'>
       {loading && !error && <p>Loading...</p>}
-      {!loading && error && <p>Error uploading articles.</p>}
+      {!loading && error && <Error />}
       {!loading && !error && section && <h1 className='section-header'>{section}</h1>}
       <div className='line' style={{display: !section && 'none'}}></div>
       {storyCards}
