@@ -49,7 +49,7 @@ const ArticleContainer = () => {
       {!loading && error && <Error />}
       {!loading && !error && section && <h1 className='section-header'>{section}</h1>}
       <div className='line' style={{display: !section && 'none'}}></div>
-      {stories && !loading && !error && <FirstStory story={firstStory}/>}
+      {firstStory && !loading && !error && <FirstStory story={firstStory}/>}
       {storyCards}
     </section>
     </>

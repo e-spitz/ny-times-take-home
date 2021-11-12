@@ -21,3 +21,17 @@
 .header-link {
   text-decoration: none;
 }
+
+@media screen and (max-width: 500px) {
+
+  .header-title {
+    font-size: 2em;
+    padding-top: 1em;
+  }
+
+  .today-date {
+    margin-top: -5%;
+    font-size: 1em;
+    padding: 0;
+  }
+}

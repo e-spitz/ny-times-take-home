@@ -12,7 +12,7 @@
 
 .card-img-container {
   height: 100%;
-  width: 100%;
+  width:100%;
 }
 
 .image {
@@ -24,7 +24,7 @@
 .story-title {
   font-weight: bold;
   font-size: 2em;
-  width: 100%;
+  width: 80%;
   font-family: 'Merriweather';
 }
 
@@ -37,5 +37,24 @@
 
 .story-abstract {
   font-size: 1em;
-  margin-bottom: 10%;
+}
+
+@media screen and (max-width: 500px) {
+  .story-title {
+    font-size: 1.2em;
+  }
+
+  .story-abstract {
+    font-size: .8em;
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .story-card {
+    display: grid;
+  }
+
+  .image {
+    height: 100%;
+  }
 }

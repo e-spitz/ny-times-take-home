@@ -20,3 +20,19 @@
   background: white;
   color: teal;
 }
+
+@media screen and (max-width: 1030px) {
+  .nav-bar {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav-bar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nav-btn {
+    font-size: .5em;
+  }
+}

@@ -42,3 +42,34 @@
 .story-card-link {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1030px) {
+  .story-title-stories {
+    font-size: 1.5em;
+  }
+
+  .story-abstract-stories {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .story-title-stories {
+    font-size: 1em;
+    margin: 0;
+  }
+
+  .story-abstract-stories {
+    font-size: .8em;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .title-abstract-stories {
+    margin: 0;
+  }
+
+  .story-card-stories {
+    height: 18vh;
+  }
+}
