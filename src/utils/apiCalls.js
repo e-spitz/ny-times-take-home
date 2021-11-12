@@ -1,10 +1,9 @@
-export const fetchTopStories = async (section) => {
+export const fetchTopStories = (section) => {
   const apiKey = '1wyIxNovEbx9RuITWx0ObNyUBuqQuAxP';
-  const res = await fetch(
+  return fetch(
     `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${apiKey}`
   )
-  const data = await checkForErrors(res);
-  return data;
+  .then(res => checkForErrors(res))
 }
 
 const checkForErrors = (res) => {
