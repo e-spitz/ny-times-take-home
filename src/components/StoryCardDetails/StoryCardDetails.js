@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchTopStories } from '../../utils/apiCalls';
 import { formatDate } from '../../utils/utils';
 import { Link } from 'react-router-dom';
+import Error from '../Error/Error';
 
 const StoryCardDetails = () => {
   let { section } = useParams()
@@ -39,12 +40,7 @@ const StoryCardDetails = () => {
 
   if ((!article && !loading) || (error && !article)) {
     return (
-      <>
-        <p className='unable'>Unable to load article.</p>
-        <Link to='/' className='go-back-link'>
-          <p>Back to HOME page</p>
-        </Link>
-      </>
+        <Error />
     );
   } else {
     return (
