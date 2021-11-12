@@ -8,9 +8,11 @@ const StoryCard = ({ story }) => {
 
   return (
     <Link to={`/${story.section}/${id}`} className='story-card-link' key={id}>
-      <article className='story-card' id={id}>
-        <p className='story-title'>{story.title}</p>
-        <p>{story.section}</p>
+      <article className='story-card-stories' id={id}>
+        <div className='title-abstract-stories'>
+          <p className='story-title-stories'>{story.title}</p>
+          <p className='story-abstract-stories'>{story.abstract}</p>
+        </div>
       </article>
     </Link>
   );

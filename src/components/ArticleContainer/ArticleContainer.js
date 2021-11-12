@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import StoryCard from '../StoryCard/StoryCard';
 import { Link } from 'react-router-dom';
 import Error from '../Error/Error';
+import FirstStory from '../FirstStory/FirstStory';
 
 const ArticleContainer = () => {
   let { section } = useParams()
@@ -30,6 +31,8 @@ const ArticleContainer = () => {
     getStories()
   }, [section, error])
 
+  const firstStory = stories.shift()
+
   const storyCards = stories.map(story => {
     if (story.section && story.title && (story.multimedia !== null) && (story.section !== 'admin')) {
       return (
@@ -40,13 +43,16 @@ const ArticleContainer = () => {
   })
 
   return (
+    <>
     <section className='article-container'>
       {loading && !error && <p>Loading...</p>}
       {!loading && error && <Error />}
       {!loading && !error && section && <h1 className='section-header'>{section}</h1>}
       <div className='line' style={{display: !section && 'none'}}></div>
+      {stories && !loading && !error && <FirstStory story={firstStory}/>}
       {storyCards}
     </section>
+    </>
   );
 }
 

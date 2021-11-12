@@ -1,17 +1,13 @@
 import './Nav.css';
 import { Link } from 'react-router-dom';
+import { sections } from '../../utils/utils';
 
 const Nav = () => {
-
-  const sections = ['arts', 'automobiles', 'books', 'business', 'fashion', 'food', 'health',
-  'insider', 'magazine', 'movies','opinion', 'politics',
-  'realestate', 'science', 'sports', 'technology', 'theater',
-  'travel', 'us', 'world']
 
   const sectionNav = sections.map(section => {
       return (
         <Link to={`/${section}`} key={section.id}>
-          <button className='nav-btn'>{section}</button>
+          <button className='nav-btn' key={section.id}>{section}</button>
         </Link>
       );
   })
