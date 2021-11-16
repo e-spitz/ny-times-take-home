@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 import ArticleContainer from '../ArticleContainer/ArticleContainer';
 import StoryCardDetails from '../StoryCardDetails/StoryCardDetails';
-import Error from '../Error/Error';
 
 const App = () => {
 

@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { fetchTopStories } from '../../utils/apiCalls';
 import { useParams } from 'react-router-dom';
 import StoryCard from '../StoryCard/StoryCard';
-import { Link } from 'react-router-dom';
 import Error from '../Error/Error';
 import FirstStory from '../FirstStory/FirstStory';
 

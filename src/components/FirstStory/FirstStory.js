@@ -11,7 +11,7 @@ if (story) {
     <Link to={`/${story.section}/${id}`} className='story-card-link' key={id}>
     <article className='story-card' id={id}>
     <div className='card-img-container'>
-    <img className='image' src={story.multimedia[0].url} alt={`${story.title} + image`}/>
+    <img className='image' src={story.multimedia[0].url} alt={story.title}/>
     </div>
     <div className='title-abstract'>
     <p className='story-title'>{story.title}</p>
