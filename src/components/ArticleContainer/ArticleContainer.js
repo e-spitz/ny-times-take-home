@@ -12,6 +12,31 @@ const ArticleContainer = () => {
   const [stories, setStories] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [searchValue, setSearchValue] = useState('')
+
+  const handleSearchValue = (e) => {
+    setSearchValue(e.target.value)
+  }
+
+  const filterStories = (searchTerm) => {
+    if (searchTerm) {
+      const search = searchTerm.toLowerCase()
+      const filteredStories = stories.filter(story => {
+        if (story.section.toLowerCase().includes(search) ||
+        story.title.toLowerCase().includes(search) ||
+        story.abstract.toLowerCase().includes(search)) {
+          return story
+        }
+        return null
+      })
+      console.log('filtered', filteredStories)
+      if (filteredStories) {
+        setStories(filteredStories)
+      }
+      setSearchValue('')
+      return filteredStories
+    }
+  }
 
   useEffect(() => {
     setStories([])
@@ -43,6 +68,8 @@ const ArticleContainer = () => {
 
   return (
     <>
+    <input type='text' placeholder='Search' value={searchValue} onChange={(e) => handleSearchValue(e)}/>
+    <button onClick={() => filterStories(searchValue)}>Search</button>
     <section className='article-container'>
       {loading && !error && <p>Loading...</p>}
       {!loading && error && <Error />}
